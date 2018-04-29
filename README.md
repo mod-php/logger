@@ -35,7 +35,7 @@ Custom params
 
 ```php
 $logger = new Mod\Logger(array(
-	'format' => ':time - :level - $file - :text'
+	'format' => ':time - :level - :file - :text'
 ));
 $logger->file = __FILE__;
 $logger->info('Some info');	// 2013-05-02 13:11:00 - info - /home/hfcorriez/myfile.php - Some info
