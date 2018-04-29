@@ -1,10 +1,10 @@
-## Mod Logger [![Build Status](https://travis-ci.org/mod/logger.png)](https://travis-ci.org/mod/logger)
+## Logger [![Build Status](https://travis-ci.org/mod/logger.png)](https://travis-ci.org/mod/logger)
 
-非常简单的日志库，支持 debug, info, warn, error, critical 等日志等级，也支持以 stream 的方式添加 handler
+A simple logger for PHP
 
-## 使用
+## Usage
 
-### 基本
+### Basic
 	
 ```php
 $logger = new Mod\Logger();
@@ -14,7 +14,7 @@ $logger->info('User->:username login to homepage', array(':username' => $usernam
 // 2013-05-02 13:11:00 - s3f9da -   info   - User->hfcorriez login to homepage
 ```
 
-### 配置
+### Config
 
 ```php
 $logger = new Mod\Logger(array(
@@ -23,7 +23,7 @@ $logger = new Mod\Logger(array(
 ));
 ```
 
-### 格式
+### Format
 
 ```php
 $logger = new Mod\Logger(array(
@@ -31,7 +31,7 @@ $logger = new Mod\Logger(array(
 ));
 ```
 
-自定义格式参数
+Custom params
 
 ```php
 $logger = new Mod\Logger(array(
@@ -43,14 +43,14 @@ $logger->info('Some info');	// 2013-05-02 13:11:00 - info - /home/hfcorriez/myfi
 
 ### Handler
 
-目前只提供一个Console Handler用于在console输出Log信息
+Internal handler
 
 ```php
 $logger = new Mod\Logger();
 $logger->add('debug', new Mod\Logger\Console());
 ```
 
-自定义Handler
+Custom handler
 
 ```php
 class YourCustomHanlder extends Mod\LoggerInterface
@@ -69,7 +69,7 @@ $logger = new Mod\Logger();
 $logger->add('error', new YourCustomHanlder());
 ```
 
-### 事件
+### Events
 
 ```php
 $logger = new Mod\Logger();
